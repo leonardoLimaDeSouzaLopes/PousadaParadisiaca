@@ -1,0 +1,73 @@
+:root {
+    --branco-principal: #ffffff;
+    --verde-principal: #20B060;
+    --fonte-principal: Arial;
+    --fonte-decorada: Brush Script MT;
+}
+
+body {
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+}
+
+#nav {
+    background-color: var(--verde-principal) !important;
+}
+
+#logo-nav {
+    width: 4em;
+}
+
+#titulo-nav {
+    color: var(--branco-principal);
+    font-family: var(--fonte-decorada);
+    font-size: 70px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: o auto;
+}
+
+#navbarSupportedContent {
+    flex-grow: 0;
+}
+
+#orcamentos-ancora-nav {
+    --bs-btn-color: var(--branco-principal);
+    --bs-btn-border-color: var(--branco-principal);
+    --bs-btn-hover-bg: var(--branco-principal);
+    --bs-btn-hover-border-color: var(--branco-principal);
+    --bs-btn-active-bg: var(--branco-principal);
+    --bs-btn-active-border-color: var(--branco-principal);
+    --bs-btn-disabled-color: var(--branco-principal);
+    --bs-btn-disabled-border-color: var(--branco-principal);
+    margin: 0 0.5em 0 0.5em;
+}
+
+#orcamentos-ancora-nav:hover {
+    color: var(--verde-principal);
+}
+
+.active {
+    color: var(--branco-principal) !important;
+}
+
+.nav-link {
+    color: var(--branco-principal);
+}
+
+#container-topo {
+    background-image: url(../images/Imagem_Topo_Parque_Tangua.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    text-align: center;
+    width: 100%;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+#logo-topo {
+    width: 35%;
+}
