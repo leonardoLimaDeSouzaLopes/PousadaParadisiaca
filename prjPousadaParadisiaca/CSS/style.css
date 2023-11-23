@@ -1,5 +1,6 @@
 :root {
     --branco-principal: #ffffff;
+    --branco-fraco: #e0f0e8;
     --verde-principal: #20B060;
     --fonte-principal: Arial;
     --fonte-decorada: Brush Script MT;
@@ -15,7 +16,9 @@ body {
 }
 
 #logo-nav {
-    width: 4em;
+    width: 5em;
+    position: relative;
+    z-index: 1;
 }
 
 #titulo-nav {
@@ -43,18 +46,28 @@ body {
     --bs-btn-disabled-color: var(--branco-principal);
     --bs-btn-disabled-border-color: var(--branco-principal);
     margin: 0 0.5em 0 0.5em;
+    position: relative;
+    z-index: 1;
 }
 
 #orcamentos-ancora-nav:hover {
-    color: var(--verde-principal);
+    color: var(--verde-principal)!important;
+    background-color: var(--branco-principal)!important;
 }
 
 .active {
     color: var(--branco-principal) !important;
+    font-weight: bold;
 }
 
 .nav-link {
     color: var(--branco-principal);
+    position: relative;
+    z-index: 1;
+}
+
+.nav-link:hover {
+    color: var(--branco-fraco);
 }
 
 #container-topo {
@@ -70,4 +83,15 @@ body {
 
 #logo-topo {
     width: 35%;
+}
+
+#pontos-turisticos-container {
+    background-color: var(--verde-principal);
+    margin-top: 2em;
+    padding: 1em;
+}
+
+#carouselExampleAutoplaying {
+    width: 50%;
+    margin: auto;
 }
