@@ -1,0 +1,359 @@
+:root {
+    --branco-principal: #ffffff;
+    --branco-fraco: #e0f0e8;
+    --preto-principal: #000000;
+    --preto-lightbox: #000000cc;
+    --verde-principal: #20B060;
+    --fonte-principal: Arial;
+    --fonte-decorada: Brush Script MT;
+    --margin-redes-sociais: 25%;
+    --margin-formulario: 35%;
+    --tamhanho-botao-lightbox: 9em;
+}
+
+body {
+    color: var(--preto-principal);
+    font-family: var(--fonte-principal);
+    padding-top: 96px;
+}
+
+#nav {
+    background-color: var(--verde-principal) !important;
+    color: var(--branco-principal);
+    top: 0;
+    left: 0;
+    z-index: 9;
+    transition: all 300ms ease-in-out;
+    margin: 0;
+}
+
+/* ˇ Scroll da Nav ˇ */
+
+.scrollParaBaixo {
+    transform: translate3d(0, -100%, 0);
+}
+
+.scrollParaCima {
+    filter: drop-shadow(0 -10px 20px var(--preto-lightbox));
+}
+
+/* ^ Scroll da Nav ^ */
+
+#logo-nav {
+    width: 5em;
+    position: relative;
+    z-index: 11;
+}
+
+#titulo-nav {
+    color: var(--branco-principal);
+    font-family: var(--fonte-decorada);
+    font-size: 70px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+}
+
+#hamburguer-nav {
+    color: var(--branco-principal);
+    border: var(--bs-border-width) solid var(-branco-principal, 0.15);
+    z-index: 11;
+}
+
+#navbarSupportedContent {
+    flex-grow: 0;
+}
+
+#orcamentos-ancora-nav, #orcamentos-ancora-nav-ativo {
+    --bs-btn-color: var(--branco-principal);
+    --bs-btn-border-color: var(--branco-principal);
+    --bs-btn-hover-bg: var(--branco-principal);
+    --bs-btn-hover-border-color: var(--branco-principal);
+    --bs-btn-active-bg: var(--branco-principal);
+    --bs-btn-active-border-color: var(--branco-principal);
+    --bs-btn-disabled-color: var(--branco-principal);
+    --bs-btn-disabled-border-color: var(--branco-principal);
+    margin: 0 0.5em 0 0.5em;
+    position: relative;
+    z-index: 11;
+}
+
+#orcamentos-ancora-nav-ativo {
+    font-weight: bold;
+}
+
+#orcamentos-ancora-nav:hover, #orcamentos-ancora-nav-ativo:hover {
+    color: var(--verde-principal) !important;
+    background-color: var(--branco-principal) !important;
+}
+
+.active {
+    color: var(--branco-principal) !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: var(--branco-principal);
+    position: relative;
+    z-index: 11;
+}
+
+.nav-link:hover {
+    color: var(--branco-fraco);
+}
+
+.nav-link:active,
+.nav-link:focus {
+    color: var(--branco-principal);
+}
+
+#container-topo {
+    background-image: url(../images/Parque_Tangua.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    width: 100%;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+#logo-topo {
+    width: 35%;
+}
+
+#pontos-turisticos-container {
+    background-color: var(--verde-principal);
+    margin-top: 2em;
+    padding: 1em;
+}
+
+.item-row {
+    margin: auto;
+}
+
+.item-row-canto {
+    opacity: 0.90;
+}
+
+#pontos-turisticos-container {
+    color: var(--branco-principal);
+}
+
+#local-container {
+    color: var(--preto-principal);
+    display: flex;
+    padding: 7em 5% 7em 5%;
+    padding-right: auto;
+    padding-left: auto;
+}
+
+#informacoes-local {
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+#titulo-local {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#imagem-mapa {
+    margin: auto;
+}
+
+#footer {
+    background-color: var(--verde-principal);
+    color: var(--branco-principal);
+    padding: 2.5%;
+}
+
+#copyright {
+    text-align: center;
+    margin-bottom: 2.6%;
+}
+
+#titulo-redes-sociais {
+    text-align: center;
+    margin-bottom: 2.6%;
+}
+
+#redes-sociais-lista {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-left: var(--margin-redes-sociais);
+    margin-right: var(--margin-redes-sociais);
+}
+
+.links-redes-sociais {
+    color: var(--branco-principal);
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.imagem-rede-social {
+    margin: 25%;
+    margin-bottom: 12.5%;
+    margin-top: 0;
+}
+
+.nome-rede-social {
+    margin: 0;
+}
+
+#lightbox {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--preto-lightbox);
+    display: none;
+}
+
+#lightbox.ativa {
+    display: flex;
+}
+
+#lightbox-imagem {
+    border-radius: 1em;
+}
+
+#lightbox-botao-imagem-anterior {
+    background-color: transparent;
+    border-color: transparent;
+    position: fixed;
+    width: var(--tamhanho-botao-lightbox);
+    margin-right: 40%;
+    z-index: 13;
+}
+
+#lightbox-botao-imagem-posterior {
+    background-color: transparent;
+    border-color: transparent;
+    position: fixed;
+    width: var(--tamhanho-botao-lightbox);
+    margin-left: 40%;
+    z-index: 13;
+}
+
+#lightbox-titulo-imagem {
+    color: var(--branco-principal);
+    position: fixed;
+    margin-top: 30em;
+    z-index: 12;
+}
+
+#lightbox-indice {
+    color: var(--branco-principal);
+    position: fixed;
+    margin-top: 50em;
+    z-index: 12;
+}
+
+#galeria-container {
+    margin: 3em;
+}
+
+.quadrado-galeria {
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+.imagem-galeria {
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.titulo-imagem-galeria {
+    text-align: center;
+}
+
+.invisivel {
+    display: none;
+}
+
+#formulario-container {
+    background-image: url(../images/Parque_Tangua.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 3em 0 8.75em;
+}
+
+#formulario-aba {
+    background-color: var(--branco-principal);
+    text-align: center;
+    border-style: solid;
+    border-color: var(--preto-principal);
+    border-radius: 5em;
+    margin: 0 var(--margin-formulario);
+    padding: 2em;
+}
+
+#titulo-formulario {
+    margin-bottom: 1em;
+}
+
+#formulario-reserva {
+    text-align: left;
+}
+
+.item-formulario,
+.grupo-formulario {
+    margin-bottom: 1em;
+}
+
+.input {
+    width: 100%;
+    border-radius: 0.25em;
+    margin-right: 1em;
+    margin-left: 0.5em;
+}
+
+.select {
+    padding: 0.25em;
+}
+
+.opicoes {
+    margin-bottom: 1em;
+}
+
+.espaco-input {
+    display: flex;
+}
+
+.opicoes-grid {
+    display: grid;
+}
+
+.label-input {
+    white-space: nowrap;
+}
+
+#calcular-diarias {
+    --bs-btn-color: var(--branco-principal);
+    --bs-btn-border-color: var(--branco-principal);
+    --bs-btn-hover-bg: var(--branco-principal);
+    --bs-btn-hover-border-color: var(--verde-principal);
+    --bs-btn-active-bg: var(--branco-principal);
+    --bs-btn-active-border-color: var(--branco-principal);
+    --bs-btn-disabled-color: var(--branco-principal);
+    --bs-btn-disabled-border-color: var(--branco-principal);
+    background-color: var(--verde-principal);
+}
+
+#calcular-diarias:hover {
+    color: var(--verde-principal) !important;
+    background-color: var(--branco-principal) !important;
+}
