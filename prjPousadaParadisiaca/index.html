@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -12,76 +12,196 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
+  <nav id="nav" name="nav" class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
-      <img id="logo-nav" src="images/Logo.png" alt="Logo Pousada Curitiba">
-      <h1 id="titulo-nav">Pousada Curitiba</h1>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <img id="logo-nav" name="logo-nav" src="images/logo/Logo.webp" alt="Logo Pousada Curitiba">
+      <h1 id="titulo-nav" name="titulo-nav">Pousada Curitiba</h1>
+      <button class="navbar-toggler" id="hamburguer-nav" name="hamburguer-nav" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon navbar-dark"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div id="navbarSupportedContent" name="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Suítes</a>
+            <a class="nav-link" href="galeria.html">Galeria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Galeria</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-light" id="orcamentos-ancora-nav" href="#">Orçamentos</a>
+            <a id="orcamentos-ancora-nav" name="orcamentos-ancora-nav" class="btn btn-outline-light"
+              href="orcamentos.html">Orçamentos</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section id="container-topo">
-    <img id="logo-topo" src="images/Logo_Nome.png" alt="Logo Pousada Curitiba">
+  <section id="container-topo" name="container-topo">
+    <img id="logo-topo" name="logo-topo" src="images/logo/Logo_Nome.webp" alt="Logo Pousada Curitiba">
   </section>
 
-  <section id="pontos-turisticos-container">
+  <section id="pontos-turisticos-container" name="pontos-turisticos-container">
 
     <h2>Venha Conhecer Diversos Pontos Turisticos Como:</h2>
 
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3"
+          aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="4"
+          aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="5"
+          aria-label="Slide 6"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="images/PARQUE-TANGUA.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+          <div class="row itens-carrossel">
+            <div class="col-6 item-row">
+              <img src="images/Parque_Tangua_Por_Do_Sol.webp" class="d-block w-100" alt="Parque Municipal Tanguá">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Parque Municipal Tanguá</h5>
+                <p>O Tanguá, nome indígena que significa “baía das conchas”, é um dos parques preferidos de quem visita
+                  Curitiba.</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/Parque_Publico_Curitiba.png" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+          <div class="row itens-carrossel">
+            <div class="col-6 item-row">
+              <img src="images/Passeio_Publico_Curitiba.webp" class="d-block w-100" alt="Passeio Público de Curitiba">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Passeio Público de Curitiba</h5>
+                <p>O Passeio Público tem implantação e equipamentos em torno do verde de diversas espécies nativas e
+                  exóticas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row itens-carrossel">
+            <div class="col-6 item-row">
+              <img src="images/Jardim_Botanico_De_Curitiba.webp" class="d-block w-100"
+                alt="Jardim Botânico Municipal de Curitiba">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Jardim Botânico Municipal de Curitiba</h5>
+                <p>A estufa de 458 m2, abriga exemplares vegetais naturais e ornamentais da flora da Mata Atlântica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row itens-carrossel">
+            <div class="col-6 item-row">
+              <img src="images/Parque_Ecologico_Costa.webp" class="d-block w-100" alt="Parque ecológico Costa">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Parque ecológico Costa</h5>
+                <p>Infelizmente o parque está temporariamente fechado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row itens-carrossel">
+            <div class="col-6 item-row">
+              <img src="images/Parque_Lago_Azul_2.webp" class="d-block w-100" alt="Parque Municipal Lago Azul">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Parque Municipal Lago Azul</h5>
+                <p>Antiga propriedade de Luiza-Ângelo Segalla, nela funcionou um moinho de milho.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row itens-carrossel">
+            <div class="col-6 item-row">
+              <img src="images/Parque_Pinhal_De_Santana_2.webp" class="d-block w-100"
+                alt="Parque Pinhal de Santana de Curitiba">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Parque Pinhal de Santana de Curitiba</h5>
+                <p>Reza a lenda que o cacique Tindiquera indicou os colonizadores portugueses onde instalar a Vila</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <img src="images/setas/Seta_Branca_Esquerda.webp">
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <img src="images/setas/Seta_Branca_Direita.webp">
         <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </section>
+
+  <section id="local-container" name="local-container">
+    <div id="informacoes-local" name="informacoes-local">
+      <h2 id="titulo-local" name="titulo-local">Estamos Aquí!</h2>
+      <p id="local" name="local">Venha conhecer nossa pousada! <br> Nossa pousada fica em Curitiba, no Paraná, em uma
+        área mais
+        afastada do centro da cidade, para que nossos hóspedes possam aproveitar um ar mais puro e mais tranquilidade,
+        ficamos perto de alguns parques como o Parque ecológico Costa, Parque Lago Azul e Parque Pinhal de Santana.
+        <br> Também ficamos apenas a 30 minutos de carro do Aeroporto Internacional Afonso Pena, facilitando sua
+        chegada.<br>
+        Endereço: Rua Ângelo Gai Nº 3113, em Curitiba, no estado do
+        Paraná, no Brasil. CEP: 81940-340. <br> As cordenadas Geográficas são 25°35'59.6"S 49°17'52.3"W
+      </p>
+    </div>
+    <div>
+      <img src="images/Mapa.webp" id="imagem-mapa" name="imagem-mapa" class="d-block w-100"
+        alt="Mapa da pousada em Curitiba">
+    </div>
+  </section>
+
+  <footer id="footer" name="footer">
+    <p id="copyright" name="copyright">© Leonardo Lima de Souza Lopes</p>
+    <h3 id="titulo-redes-sociais" name="titulo-redes-sociais">Redes Sociais</h3>
+    <ul id="redes-sociais-lista" name="redes-sociais-lista" class="row">
+      <li class="col-3">
+        <a class="links-redes-sociais" href="#">
+          <img src="images/redesSociais/Facebook.webp" class="d-block w-50 imagem-rede-social" alt="...">
+          <p class="nome-rede-social">Facebook</p>
+        </a>
+      </li>
+      <li class="col-3">
+        <a class="links-redes-sociais" href="#">
+          <img src="images/redesSociais/Instagram.webp" class="d-block w-50 imagem-rede-social" alt="...">
+          <p class="nome-rede-social">Instagram</p>
+        </a>
+      </li>
+      <li class="col-3">
+        <a class="links-redes-sociais" href="#">
+          <img src="images/redesSociais/Whatsapp.webp" class="d-block w-50 imagem-rede-social" alt="...">
+          <p class="nome-rede-social">Whatsapp</p>
+        </a>
+      </li>
+      <li class="col-3">
+        <a class="links-redes-sociais" href="#">
+          <img src="images/redesSociais/Telefone.webp" class="d-block w-50 imagem-rede-social" alt="...">
+          <p class="nome-rede-social">Telefone</p>
+        </a>
+      </li>
+    </ul>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="JS/script.js"></script>
+
 </body>
 
 </html>
