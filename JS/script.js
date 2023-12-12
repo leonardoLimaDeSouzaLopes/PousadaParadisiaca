@@ -42,7 +42,7 @@ if (pagina == "index") {
 }
 if (pagina == "galeria") {
     mudaTamanhoBotaoDaLightbox();
-    mudaEspacoGaleria();
+    mudaMargemGaleria();
 }
 if (pagina == "orcamentos") {
     mudaMargemOrcamento()
@@ -56,7 +56,7 @@ addEventListener("resize", () => {
     }
     if (pagina == "galeria") {
         mudaTamanhoBotaoDaLightbox();
-        mudaEspacoGaleria();
+        mudaMargemGaleria();
     }
     if (pagina == "orcamentos") {
         mudaMargemOrcamento()
@@ -66,22 +66,28 @@ addEventListener("resize", () => {
 function mudaNav() {
 
     const tituloNav = document.getElementById("titulo-nav");
+    const orcamentosAncoraNav = document.getElementById("orcamentos-ancora-nav");
+    const orcamentosAncoraNavAtivo = document.getElementById("orcamentos-ancora-nav-ativo");
 
-    if (window.innerWidth / window.innerHeight < 11 / 15) {
+    if (window.innerWidth < 650) {
         tituloNav.innerHTML = "";
     } else {
         tituloNav.innerHTML = "Pousada Curitiba";
     }
-}
-
-function mudaMargemHome() {
-
-    const localContainer = document.getElementById("local-container");
-
-    if (window.innerWidth / window.innerHeight < 1) {
-        localContainer.style.setProperty("display", "grid");
+    if (window.innerWidth < 990) {
+        if (orcamentosAncoraNav) {
+            orcamentosAncoraNav.style.setProperty("margin", "0");
+        }
+        if (orcamentosAncoraNavAtivo) {
+            orcamentosAncoraNavAtivo.style.setProperty("margin", "0");
+        }
     } else {
-        localContainer.style.setProperty("display", "flex");
+        if (orcamentosAncoraNav) {
+            orcamentosAncoraNav.style.setProperty("margin", "0 0.5em 0 0.5em");
+        }
+        if (orcamentosAncoraNavAtivo) {
+            orcamentosAncoraNavAtivo.style.setProperty("margin", "0 0.5em 0 0.5em");
+        }
     }
 }
 
@@ -94,16 +100,46 @@ function mudaMargem() {
     }
 }
 
-function mudaMargemOrcamento() {
-    
-    if (window.innerWidth / window.innerHeight < 1) {
-        document.documentElement.style.setProperty("--margin-formulario", "5%");
+function mudaMargemHome() {
+
+    const localContainer = document.getElementById("local-container");
+    const imagensCarrossel = document.querySelectorAll(".imagem-carrossel");
+    const setasCarrossel = document.querySelectorAll(".seta-carrossel");
+    const imagemMapaCaixa = document.getElementById("imagem-mapa-caixa")
+    const imagemMapa = document.getElementById("imagem-mapa")
+
+    if (window.innerWidth / window.innerHeight < 1441 / 701) {
+        localContainer.style.setProperty("display", "grid");
+        imagemMapaCaixa.style.setProperty("padding", "5%")
+        imagemMapa.classList.add("w-50");
+        imagemMapa.classList.remove("w-100");
     } else {
-        document.documentElement.style.setProperty("--margin-formulario", "35%");
+        localContainer.style.setProperty("display", "flex");
+        imagemMapaCaixa.style.setProperty("padding", "0")
+        imagemMapa.classList.add("w-100");
+        imagemMapa.classList.remove("w-50");
+    }
+
+    if (window.innerWidth < 768) {
+        setasCarrossel.forEach(setaCarrossel => {
+            setaCarrossel.classList.add("inativa");
+        })
+        imagensCarrossel.forEach(imagemCarrossel => {
+            imagemCarrossel.classList.add("w-100");
+            imagemCarrossel.classList.remove("w-50");
+        })
+    } else {
+        setasCarrossel.forEach(setaCarrossel => {
+            setaCarrossel.classList.remove("inativa");
+        })
+        imagensCarrossel.forEach(imagemCarrossel => {
+            imagemCarrossel.classList.add("w-50");
+            imagemCarrossel.classList.remove("w-100");
+        })
     }
 }
 
-function mudaEspacoGaleria() {
+function mudaMargemGaleria() {
 
     const galeria = document.getElementById("galeria-container");
     const tituloImagemGaleria = document.querySelectorAll(".titulo-imagem-galeria");
@@ -111,23 +147,44 @@ function mudaEspacoGaleria() {
     if (window.innerWidth / window.innerHeight < 1) {
         galeria.classList.remove("row-cols-4");
         galeria.classList.add("row-cols-2");
-        for (let index = 0; index < tituloImagemGaleria.length; index++) {
-            const tituloImagem = tituloImagemGaleria[index]
+        galeria.style.setProperty("margin-left", "auto")
+        galeria.style.setProperty("margin-right", "auto")
+        tituloImagemGaleria.forEach(tituloImagem => {
             tituloImagem.style.setProperty("display", "none");
-        }
+        })
 
     } else {
         galeria.classList.remove("row-cols-2");
         galeria.classList.add("row-cols-4");
-        for (let index = 0; index < tituloImagemGaleria.length; index++) {
-            const tituloImagem = tituloImagemGaleria[index]
+        galeria.style.setProperty("margin-left", "3em")
+        galeria.style.setProperty("margin-right", "3em")
+        tituloImagemGaleria.forEach(tituloImagem => {
             tituloImagem.style.setProperty("display", "block");
-        }
+        })
+    }
+}
+
+function mudaMargemOrcamento() {
+
+    if (window.innerWidth / window.innerHeight < 1) {
+        document.documentElement.style.setProperty("--margin-formulario", "5%");
+    } else {
+        document.documentElement.style.setProperty("--margin-formulario", "35%");
     }
 }
 
 function mudaTamanhoBotaoDaLightbox() {
-    document.documentElement.style.setProperty("--tamhanho-botao-lightbox", ((window.innerWidth / window.innerHeight * 81/16) + "em"))
+    const lightboxTituloIimagem = document.getElementById("lightbox-titulo-imagem");
+    const lightboxIndice = document.getElementById("lightbox-indice");
+    document.documentElement.style.setProperty("--tamhanho-botao-lightbox", ((window.innerWidth / window.innerHeight * 81 / 16) + "em"))
+    if (window.innerHeight < 850) {
+        lightboxTituloIimagem.style.setProperty("margin-top", "16em");
+        lightboxIndice.style.setProperty("margin-top", "28em");
+    } else {
+        lightboxTituloIimagem.style.setProperty("margin-top", "30em");
+        lightboxIndice.style.setProperty("margin-top", "50em");
+    }
+    
 }
 
 //Lightbox
@@ -234,9 +291,9 @@ function lightboxIndice() {
 function calcularPreco() {
 
     var suite = document.getElementById("formulario-suite").value;
-    var numeroDiarias = parseInt(document.getElementById("formulario-diarias").value);
+    var diarias = parseInt(document.getElementById("formulario-diarias").value);
 
-    if(numeroDiarias <= 0 || isNaN(numeroDiarias)) {
+    if (diarias <= 0 || isNaN(diarias)) {
         alert("Insira um número de dias valido");
         return;
     }
@@ -276,8 +333,8 @@ function calcularPreco() {
         }
 
     }
-    
-    var valorTotal = (valorDiaria * numeroDiarias) + valorServicos;
+
+    var valorTotal = (valorDiaria * diarias) + valorServicos;
 
     document.getElementById("formulario-total").value = "R$ " + valorTotal.toFixed(2);
 }

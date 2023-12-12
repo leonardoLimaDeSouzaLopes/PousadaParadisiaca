@@ -34,7 +34,7 @@ body {
 }
 
 .scrollParaCima {
-    filter: drop-shadow(0 -10px 20px var(--preto-lightbox));
+    filter: drop-shadow(0 0 20px var(--preto-lightbox));
 }
 
 /* ^ Scroll da Nav ^ */
@@ -67,7 +67,8 @@ body {
     flex-grow: 0;
 }
 
-#orcamentos-ancora-nav, #orcamentos-ancora-nav-ativo {
+#orcamentos-ancora-nav,
+#orcamentos-ancora-nav-ativo {
     --bs-btn-color: var(--branco-principal);
     --bs-btn-border-color: var(--branco-principal);
     --bs-btn-hover-bg: var(--branco-principal);
@@ -76,7 +77,6 @@ body {
     --bs-btn-active-border-color: var(--branco-principal);
     --bs-btn-disabled-color: var(--branco-principal);
     --bs-btn-disabled-border-color: var(--branco-principal);
-    margin: 0 0.5em 0 0.5em;
     position: relative;
     z-index: 11;
 }
@@ -85,7 +85,8 @@ body {
     font-weight: bold;
 }
 
-#orcamentos-ancora-nav:hover, #orcamentos-ancora-nav-ativo:hover {
+#orcamentos-ancora-nav:hover,
+#orcamentos-ancora-nav-ativo:hover {
     color: var(--verde-principal) !important;
     background-color: var(--branco-principal) !important;
 }
@@ -128,20 +129,22 @@ body {
 
 #pontos-turisticos-container {
     background-color: var(--verde-principal);
+    color: var(--branco-principal);
     margin-top: 2em;
     padding: 1em;
 }
 
-.item-row {
+.carousel {
+    font-weight: bold;
+}
+
+.imagem-carrossel {
+    border-radius: 1em;
     margin: auto;
 }
 
-.item-row-canto {
-    opacity: 0.90;
-}
-
-#pontos-turisticos-container {
-    color: var(--branco-principal);
+.inativa {
+    display: none;
 }
 
 #local-container {
@@ -163,6 +166,7 @@ body {
 }
 
 #imagem-mapa {
+    border-radius: 1em;
     margin: auto;
 }
 
@@ -262,6 +266,7 @@ body {
 
 #galeria-container {
     margin: 3em;
+    
 }
 
 .quadrado-galeria {
