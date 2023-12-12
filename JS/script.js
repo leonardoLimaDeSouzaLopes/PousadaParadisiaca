@@ -174,6 +174,9 @@ function mudaMargemOrcamento() {
 }
 
 function mudaTamanhoBotaoDaLightbox() {
+
+    const img = document.getElementById("lightbox-imagem");
+
     const lightboxTituloIimagem = document.getElementById("lightbox-titulo-imagem");
     const lightboxIndice = document.getElementById("lightbox-indice");
     document.documentElement.style.setProperty("--tamhanho-botao-lightbox", ((window.innerWidth / window.innerHeight * 81 / 16) + "em"))
@@ -183,6 +186,22 @@ function mudaTamanhoBotaoDaLightbox() {
     } else {
         lightboxTituloIimagem.style.setProperty("margin-top", "30em");
         lightboxIndice.style.setProperty("margin-top", "50em");
+    }
+    if (window.innerWidth / window.innerHeight < 1) {
+        if (img) {
+            img.classList.add("w-100");
+            img.classList.remove("w-50");
+        }
+        document.getElementById("lightbox-botao-imagem-anterior").style.setProperty("margin-right", "80%");
+        document.getElementById("lightbox-botao-imagem-posterior").style.setProperty("margin-left", "80%");
+    }
+    else {
+        if (img) {
+            img.classList.add("w-50");
+            img.classList.remove("w-100");
+        }
+        document.getElementById("lightbox-botao-imagem-anterior").style.setProperty("margin-right", "40%");
+        document.getElementById("lightbox-botao-imagem-posterior").style.setProperty("margin-left", "40%");
     }
     
 }
@@ -261,8 +280,19 @@ function lightboxAdicionarImagem(indice) {
     const img = document.createElement("img");
     img.id = "lightbox-imagem";
     img.src = imagem.src;
-    img.classList.add("d-block");
-    img.classList.add("w-50");
+    
+    if (window.innerWidth / window.innerHeight < 1) {
+        img.classList.add("d-block");
+        img.classList.add("w-100");
+        document.getElementById("lightbox-botao-imagem-anterior").style.setProperty("margin-right", "80%");
+        document.getElementById("lightbox-botao-imagem-posterior").style.setProperty("margin-left", "80%");
+    }
+    else {
+        img.classList.add("d-block");
+        img.classList.add("w-50");
+        document.getElementById("lightbox-botao-imagem-anterior").style.setProperty("margin-right", "40%");
+        document.getElementById("lightbox-botao-imagem-posterior").style.setProperty("margin-left", "40%");
+    }
 
     indiceImagemLightbox = parseInt(indice);
 
