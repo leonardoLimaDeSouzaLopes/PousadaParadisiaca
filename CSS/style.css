@@ -111,6 +111,16 @@ body {
     color: var(--branco-principal);
 }
 
+.link-idioma {
+    position: relative;
+    z-index: 11;
+}
+
+.imagem-idioma {
+    height: 2em;
+    margin: 0.25em 0.5em;
+}
+
 #container-topo {
     background-image: url(../images/Parque_Tangua.webp);
     background-repeat: no-repeat;
