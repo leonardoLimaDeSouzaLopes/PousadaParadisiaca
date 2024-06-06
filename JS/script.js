@@ -1,9 +1,9 @@
 
 pagina = window.location.pathname.split("/").pop().split(".").at(0).split("-").at(0);
-idioma = window.location.pathname.split("-").pop();
+idioma = window.location.pathname.split("-").pop().split(".").at(0);
 
 if (idioma != "ingles") {
-    idioma = "port-br";
+    idioma = "pt-br";
 }
 
 if (pagina == "galeria") {
@@ -80,7 +80,7 @@ function mudaNav() {
         if (idioma == "pt-br") {
             tituloNav.innerHTML = "Pousada Curitiba";
         } else if (idioma == "ingles") {
-            tituloNav.innerHTML = "LoL";
+            tituloNav.innerHTML = "Curitiba Lodge";
         }
     }
     if (window.innerWidth < 990) {
@@ -332,48 +332,99 @@ function calcularPreco() {
     var suite = document.getElementById("formulario-suite").value;
     var diarias = parseInt(document.getElementById("formulario-diarias").value);
 
-    if (diarias <= 0 || isNaN(diarias)) {
-        alert("Insira um número de dias valido");
-        return;
-    }
+    if (idioma == "pt-br") {
 
-    var valorDiaria;
-    switch (suite) {
-        case "standard":
-            valorDiaria = 100;
-            break;
-        case "exclusive":
-            valorDiaria = 200;
-            break;
-        case "luxo":
-            valorDiaria = 300;
-            break;
-    }
+        if (diarias <= 0 || isNaN(diarias)) {
+            alert("Insira um número de dias valido");
+            return;
+        }
 
-    var servicos = document.getElementsByName("formulario-servicos");
-    var valorServicos = 0;
+        var valorDiaria;
+        switch (suite) {
+            case "standard":
+                valorDiaria = 100;
+                break;
+            case "exclusive":
+                valorDiaria = 200;
+                break;
+            case "luxo":
+                valorDiaria = 300;
+                break;
+        }
 
-    for (index = 0; index < servicos.length; index++) {
+        var servicos = document.getElementsByName("formulario-servicos");
+        var valorServicos = 0;
 
-        if (servicos[index].checked) {
+        for (index = 0; index < servicos.length; index++) {
 
-            switch (servicos[index].value) {
-                case "lavanderia":
-                    valorServicos += 120;
-                    break;
-                case "refeicoes":
-                    valorServicos += 500;
-                    break;
-                case "cityTour":
-                    valorServicos += 100;
-                    break;
+            if (servicos[index].checked) {
+
+                switch (servicos[index].value) {
+                    case "lavanderia":
+                        valorServicos += 120;
+                        break;
+                    case "refeicoes":
+                        valorServicos += 500;
+                        break;
+                    case "cityTour":
+                        valorServicos += 100;
+                        break;
+                }
+
             }
 
         }
 
+        var valorTotal = (valorDiaria * diarias) + valorServicos;
+
+        document.getElementById("formulario-total").value = "R$ " + valorTotal.toFixed(2);
+
+    } else if (idioma == "ingles") {
+
+        if (diarias <= 0 || isNaN(diarias)) {
+            alert("Enter a valid number of days");
+            return;
+        }
+
+        var valorDiaria;
+        switch (suite) {
+            case "standard":
+                valorDiaria = 20;
+                break;
+            case "exclusive":
+                valorDiaria = 40;
+                break;
+            case "luxo":
+                valorDiaria = 60;
+                break;
+        }
+
+        var servicos = document.getElementsByName("formulario-servicos");
+        var valorServicos = 0;
+
+        for (index = 0; index < servicos.length; index++) {
+
+            if (servicos[index].checked) {
+
+                switch (servicos[index].value) {
+                    case "lavanderia":
+                        valorServicos += 25;
+                        break;
+                    case "refeicoes":
+                        valorServicos += 100;
+                        break;
+                    case "cityTour":
+                        valorServicos += 20;
+                        break;
+                }
+
+            }
+
+        }
+
+        var valorTotal = (valorDiaria * diarias) + valorServicos;
+
+        document.getElementById("formulario-total").value = "$ " + valorTotal.toFixed(2);
+
     }
-
-    var valorTotal = (valorDiaria * diarias) + valorServicos;
-
-    document.getElementById("formulario-total").value = "R$ " + valorTotal.toFixed(2);
 }
