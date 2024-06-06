@@ -1,5 +1,10 @@
 
-pagina = window.location.pathname.split("/").pop().split(".").at(0);
+pagina = window.location.pathname.split("/").pop().split(".").at(0).split("-").at(0);
+idioma = window.location.pathname.split("-").pop();
+
+if (idioma != "ingles") {
+    idioma = "port-br";
+}
 
 if (pagina == "galeria") {
     lightbox();
@@ -72,7 +77,11 @@ function mudaNav() {
     if (window.innerWidth < 650) {
         tituloNav.innerHTML = "";
     } else {
-        tituloNav.innerHTML = "Pousada Curitiba";
+        if (idioma == "pt-br") {
+            tituloNav.innerHTML = "Pousada Curitiba";
+        } else if (idioma == "ingles") {
+            tituloNav.innerHTML = "LoL";
+        }
     }
     if (window.innerWidth < 990) {
         if (orcamentosAncoraNav) {
@@ -203,7 +212,7 @@ function mudaTamanhoBotaoDaLightbox() {
         document.getElementById("lightbox-botao-imagem-anterior").style.setProperty("margin-right", "40%");
         document.getElementById("lightbox-botao-imagem-posterior").style.setProperty("margin-left", "40%");
     }
-    
+
 }
 
 //Lightbox
@@ -280,7 +289,7 @@ function lightboxAdicionarImagem(indice) {
     const img = document.createElement("img");
     img.id = "lightbox-imagem";
     img.src = imagem.src;
-    
+
     if (window.innerWidth / window.innerHeight < 1) {
         img.classList.add("d-block");
         img.classList.add("w-100");
